@@ -8,6 +8,7 @@ namespace UnitedLex.OpenEmrAutomation.Pages
 {
     class LoginPage
     {
+        //locators
         private static By usernameLocator = By.Id("authUser");
         private static By passwordLocator = By.Id("clearPass");
         private static By languageLocator = By.Name("languageChoice");
