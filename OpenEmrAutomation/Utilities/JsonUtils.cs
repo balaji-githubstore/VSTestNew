@@ -11,7 +11,10 @@ namespace OpenEmrAutomation.Utilities
         public static String GetValue(string key)
         {
 
-            string path = AppContext.BaseDirectory.Substring(0, AppContext.BaseDirectory.IndexOf("bin"));
+            //string path = AppContext.BaseDirectory.Substring(0, AppContext.BaseDirectory.IndexOf("bin"));
+            string path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+            path = path.Substring(0, path.LastIndexOf("bin"));
+            path = new Uri(path).LocalPath;
             StreamReader reader = new StreamReader(path + "/testdata/app.json");
             string data = reader.ReadToEnd();
 

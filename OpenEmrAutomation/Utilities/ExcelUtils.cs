@@ -21,7 +21,7 @@ namespace UnitedLex.OpenEmrAutomation.Utilities
                 for (int c = 1; c <= colCount; c++)
                 {
                     string cellValue = range.Cell(r, c).GetString();
-                    Console.WriteLine(cellValue);
+                   
                     temp[c - 1] = cellValue;
                 }
 

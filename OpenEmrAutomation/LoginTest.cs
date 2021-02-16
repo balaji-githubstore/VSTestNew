@@ -11,7 +11,7 @@ namespace UnitedLex.OpenEmrAutomation
 {
     public class LoginTest : WebDriverWrapper
     {
-
+        
         //admin,pass,English (Indian),OpenEMR
         //physician,physician,English (Indian),OpenEMR
 
@@ -35,7 +35,7 @@ namespace UnitedLex.OpenEmrAutomation
             //temp3[2] = "English (Indian)";
             //temp3[3] = "OpenEMR";
 
-            object[] main = new object[3]; //number of test case
+            object[] main = new object[1]; //number of test case
             main[0] = temp1;
             //main[1] = temp2;
             //main[2] = temp3;

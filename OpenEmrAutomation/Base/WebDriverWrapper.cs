@@ -32,7 +32,11 @@ namespace UnitedLex.OpenEmrAutomation.Base
                 //projectPath = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
                 //projectPath = projectPath.Substring(0, projectPath.LastIndexOf("bin"));
                 //projectPath = new Uri(projectPath).LocalPath;
-                projectPath = AppContext.BaseDirectory.Substring(0, AppContext.BaseDirectory.IndexOf("bin"));
+                //projectPath = AppContext.BaseDirectory.Substring(0, AppContext.BaseDirectory.IndexOf("bin"));
+                projectPath = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+                projectPath = projectPath.Substring(0, projectPath.LastIndexOf("bin"));
+                projectPath = new Uri(projectPath).LocalPath;
+
                 string reportPath = projectPath + @"Reports\";
 
                 ExtentHtmlReporter reporter = new ExtentHtmlReporter(reportPath);
@@ -62,6 +66,7 @@ namespace UnitedLex.OpenEmrAutomation.Base
         public void LaunchBrowser()
         {
             string browserName = JsonUtils.GetValue("browser");
+            browserName = TestContext.Parameters.Get("browser", browserName);
             string node = null;
             if (node == null)
             {
